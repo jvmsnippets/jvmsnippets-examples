@@ -1,0 +1,105 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jvmsnippets</groupId>
+        <artifactId>jvmsnippets-examples</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>jvmsnippets-examples-xrecords</artifactId>
+    <packaging>pom</packaging>
+    <name>Tabular Record Conversion Framework in Multiple JVM Languages</name>
+
+    <modules>
+        <module>java-xrecords</module>
+        <module>xtend-xrecords</module>
+        <module>scala-xrecords</module>
+    </modules>
+
+    <properties>
+        <mainClass>jvmsnippets.xrecords.Main</mainClass>
+
+        <hsqldb.version>2.3.4</hsqldb.version>
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <commons-dbcp2.version>2.1.1</commons-dbcp2.version>
+        <ftpserver-core.version>1.1.0</ftpserver-core.version>
+
+        <snakeyaml.version>1.17</snakeyaml.version>
+        <yamltag.version>1.0.0</yamltag.version>
+        <javadbf.version>0.4.0</javadbf.version>
+        <af-javadbf.version>0.9.0</af-javadbf.version>
+        <opencsv.version>2.3</opencsv.version>
+        <commons-csv.version>1.4</commons-csv.version>
+        <pojomatic.version>2.0.1</pojomatic.version>
+        <slf4j.version>1.7.21</slf4j.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.linuxense</groupId>
+            <artifactId>javadbf</artifactId>
+            <version>${javadbf.version}</version>
+        </dependency>
+        <!-- TODO: Choose more recent CSV library -->
+        <dependency>
+            <groupId>com.github.albfernandez</groupId>
+            <artifactId>javadbf</artifactId>
+            <version>${af-javadbf.version}</version>
+        </dependency>
+
+        <!-- TODO: Choose Apache CSV library -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>${commons-csv.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>${opencsv.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>${snakeyaml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.xrrocha</groupId>
+            <artifactId>yamltag</artifactId>
+            <version>${yamltag.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>${hsqldb.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>${commons-dbcp.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>${commons-dbcp2.version}</version>
+            <scope>test</scope>
+        </dependency>
+        -->
+
+        <dependency>
+            <groupId>org.apache.ftpserver</groupId>
+            <artifactId>ftpserver-core</artifactId>
+            <version>${ftpserver-core.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

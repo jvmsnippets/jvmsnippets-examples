@@ -1,0 +1,92 @@
+jvmsnippets.xrecords.script.ScriptingFilter:
+  tagName: scriptFilter
+
+jvmsnippets.xrecords.FieldRenamingTransformer:
+  tagName: fieldRenamer
+
+jvmsnippets.xrecords.script.ScriptingTransformer:
+  tagName: scriptTransform
+
+jvmsnippets.xrecords.script.CopierScript:
+  tagName: script
+
+jvmsnippets.xrecords.jdbc.JDBCSource:
+  tagName: databaseSource
+
+jvmsnippets.xrecords.jdbc.SQLDestination:
+  tagName: sqlInsert
+  listProperties:
+    fields: jvmsnippets.xrecords.field.FormattedField
+
+jvmsnippets.xrecords.jdbc.JDBCDestination:
+  tagName: databaseDestination
+
+jvmsnippets.xrecords.csv.CSVSource:
+  tagName: csvSource
+  listProperties:
+    fields: jvmsnippets.xrecords.field.IndexedField
+
+jvmsnippets.xrecords.csv.CSVDestination:
+  tagName: csvDestination
+  listProperties:
+    fields: jvmsnippets.xrecords.field.FormattedField
+
+jvmsnippets.xrecords.fixed.FixedSource:
+  tagName: fixedLengthSource
+  listProperties:
+    fields: jvmsnippets.xrecords.field.FixedField
+
+jvmsnippets.xrecords.fixed.FixedDestination:
+  tagName: fixedLengthDestination
+  listProperties:
+    fields: jvmsnippets.xrecords.field.FixedField
+
+jvmsnippets.xrecords.xbase.XBaseDestination:
+  tagName: xbaseDestination
+  listProperties:
+    fields: jvmsnippets.xrecords.field.Field
+
+jvmsnippets.xrecords.xbase.XBaseSource:
+  tagName: xbaseSource
+
+jvmsnippets.xrecords.field.Field:
+  tagName: field
+
+jvmsnippets.xrecords.field.FormattedField:
+  tagName: formattedField
+
+jvmsnippets.xrecords.field.IndexedField:
+  tagName: indexedField
+  
+jvmsnippets.xrecords.field.IntegerParser:
+  tagName: integer
+  
+jvmsnippets.xrecords.field.DoubleParser:
+  tagName: double
+  
+jvmsnippets.xrecords.field.BigDecimalParser:
+  tagName: bigDecimal
+  
+jvmsnippets.xrecords.field.DateParser:
+  tagName: date
+  
+jvmsnippets.xrecords.field.StringParser:
+  tagName: string
+
+jvmsnippets.xrecords.io.StringReaderProvider:
+  tagName: fixedInput
+
+jvmsnippets.xrecords.io.LocationInputStreamProvider:
+  tagName: inputLocation
+
+jvmsnippets.xrecords.io.LocationReaderProvider:
+  tagName: inputReader
+
+jvmsnippets.xrecords.io.FileLocationWriterProvider:
+  tagName: outputFileWriter
+
+jvmsnippets.xrecords.io.FtpOutputStreamProvider:
+  tagName: ftpOutput
+
+jvmsnippets.xrecords.io.FileLocationOutputStreamProvider:
+  tagName: outputFile
