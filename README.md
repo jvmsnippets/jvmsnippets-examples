@@ -3,8 +3,8 @@
 This repository contains examples of libraries and frameworks written in
 multiple JVM languages.
 
-The purpose of these examples is to allow experienced Java programmers
-to contrast the Java "reference" implementations with its alternative
+The purpose of these examples is allowing experienced Java programmers
+to contrast the Java "reference" implementations with their alternative
 JVM language counterparts.
 
 Versions implemented JVM languages other than Java aim at exploiting
