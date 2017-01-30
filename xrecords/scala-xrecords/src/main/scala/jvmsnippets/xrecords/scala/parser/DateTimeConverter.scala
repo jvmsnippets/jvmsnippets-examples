@@ -1,4 +1,4 @@
-package jvmsnippets.xrecords.scala.converter
+package jvmsnippets.xrecords.scala.parser
 
 
 /*
