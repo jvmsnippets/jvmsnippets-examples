@@ -15,18 +15,20 @@ abstract class DecimalFormatNumericParser[A](pattern: String, multiplier: Int = 
     decimalFormat
   }
 
-  protected[parser] implicit def conv: Number => A
+  protected[parser] def fromNumber(number: Number): A
 
   def parse(string: String): A =
-    conv(decimalFormat.parse(string))
+    fromNumber(decimalFormat.parse(string))
 
-  def format(value: A): String = decimalFormat.format(value)
+  def format(value: A): String =
+    decimalFormat.format(value)
 }
 
 class DoubleParser(pattern: String, multiplier: Int = 1)
   extends DecimalFormatNumericParser[Double](pattern, multiplier) {
 
-  protected[parser] implicit val conv = _.doubleValue
+  protected[parser] def fromNumber(number: Number): Double =
+    number.doubleValue
 
   protected[parser] def configureFormat(format: DecimalFormat): Unit = {
     format.setParseIntegerOnly(false)
@@ -37,7 +39,8 @@ class DoubleParser(pattern: String, multiplier: Int = 1)
 class IntParser(pattern: String, multiplier: Int = 1)
   extends DecimalFormatNumericParser[Int](pattern, multiplier) {
 
-  protected[parser] implicit val conv  = _.intValue
+  protected[parser] def fromNumber(number: Number): Int =
+    number.intValue
 
   protected[parser] def configureFormat(format: DecimalFormat): Unit = {
     format.setParseIntegerOnly(true)
@@ -48,8 +51,8 @@ class IntParser(pattern: String, multiplier: Int = 1)
 class BigDecimalParser(pattern: String, multiplier: Int = 1)
   extends DecimalFormatNumericParser[BigDecimal](pattern, multiplier) {
 
-  protected[parser] implicit val conv: Number => BigDecimal =
-    number => new BigDecimal(new java.math.BigDecimal(number.toString))
+  protected[parser] def fromNumber(number: Number): BigDecimal =
+    new BigDecimal(new java.math.BigDecimal(number.toString))
 
   override def configureFormat(format: DecimalFormat): Unit = {
     format.setParseIntegerOnly(false)
@@ -60,8 +63,8 @@ class BigDecimalParser(pattern: String, multiplier: Int = 1)
 class BigIntParser(pattern: String, multiplier: Int = 1)
   extends DecimalFormatNumericParser[BigInt](pattern, multiplier) {
 
-  protected[parser] implicit def conv: Number => BigInt =
-    number => new BigInt(new java.math.BigInteger(number.toString))
+  protected[parser] def fromNumber(number: Number): BigInt =
+    new BigInt(new java.math.BigInteger(number.toString))
 
   override def configureFormat(format: DecimalFormat): Unit = {
     format.setParseIntegerOnly(true)
