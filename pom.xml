@@ -39,6 +39,7 @@
         <junit.version>4.12</junit.version>
         <hamcrest.version>2.0.0.0</hamcrest.version>
         <mockito.version>1.10.19</mockito.version>
+        <utest.version>0.4.5</utest.version>
 
         <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
         <maven-compiler-plugin.source.version>${java.version}</maven-compiler-plugin.source.version>
@@ -101,10 +102,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_2.12</artifactId>
-            <version>${scalatest.version}</version>
-            <scope>test</scope>
+            <groupId>com.lihaoyi</groupId>
+            <artifactId>utest_2.12</artifactId>
+            <version>${utest.version}</version>
         </dependency>
 
         <dependency>
