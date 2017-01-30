@@ -40,7 +40,7 @@ trait RecordCopier extends Copier[Record, Record] {
   * - Remove a field given its fieldName (fails for non-existent fieldName)
   *
   * `Record` also provides methods to copy from/to another destination as well as
-  * utility static methods to convert to/from
+  * utility static methods to fromNumber to/from
   * [[https://docs.oracle.com/javase/8/docs/api/java/util/Map.html `Map`]]().
   *
   * @param map The underlying `Map` containing field names and values.

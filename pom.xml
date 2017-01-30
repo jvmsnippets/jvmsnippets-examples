@@ -25,6 +25,7 @@
 
         <scala.version>2.12.1</scala.version>
         <scala-plugin.version>3.2.1</scala-plugin.version>
+        <jline.version>2.11</jline.version>
         <scalatest.version>3.2.0-SNAP3</scalatest.version>
         <scalatest-plugin.version>1.0</scalatest-plugin.version>
 
