@@ -102,6 +102,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_2.12</artifactId>
+            <version>${scalatest.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.lihaoyi</groupId>
             <artifactId>utest_2.12</artifactId>
             <version>${utest.version}</version>
